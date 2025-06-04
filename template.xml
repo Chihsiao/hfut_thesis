@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing">
+<w:body>
+<!--
+$if(title)$
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Title" />
+      </w:pPr>
+      $title$
+    </w:p>
+$endif$
+$if(subtitle)$
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Subtitle" />
+      </w:pPr>
+      $subtitle$
+    </w:p>
+$endif$
+$for(author)$
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Author" />
+      </w:pPr>
+      $author$
+    </w:p>
+$endfor$
+$if(date)$
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Date" />
+      </w:pPr>
+      $date$
+    </w:p>
+$endif$
+-->
+$if(abstract_zh)$
+    <w:p>
+      <w:r>
+        <w:br w:type="page"/>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="AbstractTitle" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia" />
+          <w:fitText w:val="1083" />
+          <w:spacing w:val="360" />
+        </w:rPr>
+        <w:t>摘</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia" />
+          <w:fitText w:val="1083" />
+          <w:spacing w:val="1" />
+        </w:rPr>
+        <w:t>要</w:t>
+      </w:r>
+    </w:p>
+    $abstract_zh$
+$endif$
+$if(abstract)$
+    <w:p>
+      <w:r>
+        <w:br w:type="page"/>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="AbstractTitle" />
+      </w:pPr>
+      <w:r>
+        <w:t>Abstract</w:t>
+      </w:r>
+    </w:p>
+    $abstract$
+$endif$
+$for(include-before)$
+    $include-before$
+$endfor$
+$if(toc)$
+    <w:p>
+      <w:r>
+        <w:br w:type="page"/>
+      </w:r>
+    </w:p>
+    $toc$
+$endif$
+$if(lof)$
+    <w:p>
+      <w:r>
+        <w:br w:type="page"/>
+      </w:r>
+    </w:p>
+    $lof$
+$endif$
+$if(lot)$
+    <w:p>
+      <w:r>
+        <w:br w:type="page"/>
+      </w:r>
+    </w:p>
+    $lot$
+$endif$
+    <w:p>
+      <w:pPr>
+        <w:sectPr>
+          <w:pgSz w:w="11906" w:h="16838" />
+          <w:pgMar
+            w:top="1440"
+            w:left="1701"
+            w:right="1701"
+            w:bottom="1440"
+            w:header="851"
+            w:footer="851"
+            w:gutter="0"
+          />
+          <w:pgNumType w:fmt="upperRoman" w:start="1"/>
+          <w:docGrid w:type="lines" w:linePitch="312" w:charSpace="0" />
+        </w:sectPr>
+      </w:pPr>
+    </w:p>
+    $body$
+$for(include-after)$
+    $include-after$
+$endfor$
+$-- sectpr will be set to the last sectpr in a reference.docx, if present
+$if(sectpr)$
+    $sectpr$
+$else$
+    <w:sectPr />
+$endif$
+  </w:body>
+</w:document>
